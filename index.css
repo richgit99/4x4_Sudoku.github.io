@@ -1,0 +1,195 @@
+body {
+    margin: 0;
+    background: linear-gradient(rgb(235, 114, 215), rgb(236, 236, 143), rgb(226, 157, 226));
+
+}
+
+
+@keyframes top_line_animation{
+    0%{color: green;}
+    30%{color: aqua;}
+    50%{color: chocolate;}
+    70%{color: chartreuse;}
+    90%{color: blueviolet;}
+
+}
+
+#top_line{
+
+animation: top_line_animation;
+animation-duration: 6s;
+animation-iteration-count: infinite;
+transition:ease-in;
+transition-property: all;
+transition-duration: 1000ms;
+
+
+}
+
+
+#submit_game:hover {
+    background-color: darksalmon;
+}
+
+#open_model:hover{
+    background-color: darksalmon;
+}
+
+#start_game:hover {
+    background-color: darksalmon;
+
+}
+
+
+#start_button {
+    display: flex;
+    width: 99%;
+    margin: 0 auto;
+    justify-content: space-around;
+    justify-items: center;
+
+}
+
+#maha_container button {
+    border: 2px solid chartreuse;
+    margin: 0 auto;
+    justify-content: center;
+    justify-items: center;
+    height: 4em;
+    font-size: large;
+    font-weight: bolder;
+}
+
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+#model {
+    width: 50%;
+    padding: 2em;
+    border: 2px solid black;
+    font-weight: bold;
+    background: linear-gradient(rgb(152, 230, 152), rgb(231, 179, 83), rgb(245, 191, 200));
+}
+
+header ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+header {
+    padding: 1em;
+    background-color: rgb(231, 189, 82);
+    border: 2px solid rgb(231, 189, 82);
+}
+
+header li {
+    list-style-type: none;
+    font-size: larger;
+    font-weight: bold;
+    line-height: 2;
+}
+
+#action_buttons {
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    justify-items: center;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 56, 0.658);
+    padding: 0.9em 0;
+}
+
+
+#action_buttons button {
+
+    font-size: larger;
+    width: 20%;
+    padding: 0.2em;
+    outline: 2px solid blueviolet;
+
+}
+
+#action_buttons button:hover {
+    background-color: rgba(201, 255, 119, 0.863);
+}
+
+#result {
+    animation: result_text_border_animation;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+
+}
+
+
+
+@media (min-width:50px) and (max-width:600px) {
+
+    #maha_container {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        border: 2px solid black;
+
+    }
+
+
+    #start_game {
+
+        margin: 0 auto;
+        padding: 0.3em;
+        font-size: larger;
+        width: 35%;
+    }
+
+
+    #submit_game {
+
+        margin: 0 auto;
+        padding: 0.3em;
+        font-size: larger;
+        width: 35%;
+    }
+
+
+}
+
+
+@media (min-width:600px) and (max-width:1600px) {
+
+    #start_game {
+
+        margin: 0 auto;
+        padding: 0.3em;
+        font-size: larger;
+        width: 27%;
+    }
+
+    #maha_container {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        border: 2px solid black;
+
+    }
+
+    #submit_game {
+
+        margin: 0 auto;
+        padding: 0.3em;
+        font-size: larger;
+        width: 27%;
+    }
+
+
+}
