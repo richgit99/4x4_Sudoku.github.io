@@ -1,159 +1,115 @@
-const open_model = document.getElementById("open_model");
+const freezed_buttons = document.getElementsByClassName('freezed_button');
+const to_be_filled_buttons = document.getElementsByClassName("to_be_filled");
 
-const close_model = document.getElementById("close_model");
+const to_be_1 = document.getElementsByClassName("to_be_1");
+const to_be_2 = document.getElementsByClassName("to_be_2");
+const to_be_3 = document.getElementsByClassName("to_be_3");
+const to_be_4 = document.getElementsByClassName("to_be_4");
 
-const model = document.getElementById("model");
+[...freezed_buttons].forEach((each_button) => {
+    each_button.disabled = true;
+    each_button.style.backgroundColor = 'AEC3AE';
+    each_button.style.color = 'black';
+});
 
-const start_game = document.getElementById("start_game");
+const button_1 = document.getElementById("button_1");
+const button_2 = document.getElementById("button_2");
+const button_3 = document.getElementById("button_3");
+const button_4 = document.getElementById("button_4");
 
-const result = document.getElementById("result");
-
-
-const block_1_1 = document.getElementById("block_1_1");
-const block_1_3 = document.getElementById("block_1_3");
-const block_1_4 = document.getElementById("block_1_4");
-const block_1_5 = document.getElementById("block_1_5");
-const block_1_6 = document.getElementById("block_1_6");
-const block_1_7 = document.getElementById("block_1_7");
-const block_1_10 = document.getElementById("block_1_10");
-const block_1_12 = document.getElementById("block_1_12");
-const block_1_13 = document.getElementById("block_1_13");
-
-
-const id = document.getElementById("id");
-const submit_game = document.getElementById("submit_game");
+const start_button = document.getElementById("start_button");
+const submit_button = document.getElementById("submit_button");
+const play_again_button = document.getElementById("play_again_button");
 
 
-const action_button_1 = document.getElementById("action_button_1");
-const action_button_2 = document.getElementById("action_button_2");
-const action_button_3 = document.getElementById("action_button_3");
-const action_button_4 = document.getElementById("action_button_4");
+start_button.onclick = function () {
+
+    setTimeout(() => {
+        start_button.remove();
+        submit_button.style.display = 'block';
+        play_again_button.style.display = 'block';
+    }, 300);
+
+    const user_clicked_buttons = [button_1, button_2, button_3, button_4];
+
+    for (let i = 0; i < user_clicked_buttons.length; i++) {
+
+        user_clicked_buttons[i].onclick = function () {
+
+            [...to_be_filled_buttons].forEach((each_button) => {
+                each_button.onclick = function () {
+                    each_button.innerText = user_clicked_buttons[i].innerText;
+                };
+            });
+        }
+    }
 
 
+    let win_counter = 0;
 
-start_game.onclick = function () {
+    submit_button.onclick = function () {
 
-    start_game.remove();
+        setTimeout(() => {
+            submit_button.remove();
+        }, 500);
 
-
-    submit_game.onclick = function () {
-
-        submit_game.remove();
-
-
-        if (block_1_1.textContent == 4 && block_1_3.textContent == 2 && block_1_4.textContent == 3 && block_1_5.textContent == 2 && block_1_6.textContent == 3 && block_1_7.textContent == 1 &&
-            block_1_10.textContent == 4 && block_1_12.textContent == 2 && block_1_13.textContent == 3) {
+        const result_line = document.getElementById("result_line");
 
 
-            result.style.color = 'black';
-            result.innerHTML = "Congratulations you solved it Correctly";
-            result.style.width = '60%';
-            result.style.backgroundColor = 'yellow';
-            result.style.padding = '1.5em';
-            result.style.border = '1px solid yellow';
-            result.style.borderRadius = '12px';
-            result.style.margin = '0 auto';
+        [...to_be_1].forEach((each_button) => {
+            if (each_button.innerText == "1") {
+                win_counter++;
+            }
+        });
+
+        [...to_be_2].forEach((each_button) => {
+            if (each_button.innerText == "2") {
+                win_counter++;
+            }
+        });
+
+        [...to_be_3].forEach((each_button) => {
+            if (each_button.innerText == "3") {
+                win_counter++;
+            }
+        });
 
 
+        [...to_be_4].forEach((each_button) => {
+            if (each_button.innerText == "4") {
+                win_counter++;
+            }
+
+        });
+
+        // alert(win_counter);
+ 
+        if (win_counter == 9) {
+            result_line.innerText = 'You Won';
+            result_line.style.color = '#614BC3';
+            confetti();
+            confetti();
+            confetti();
+            confetti(); confetti(); confetti(); confetti();
+            result_line.style.display = 'block';
         }
         else {
-            // alert("You lost !!!!!!1");
-            console.log(block_1_1);
-            result.style.color = 'black';
-            result.style.backgroundColor = 'red';
-            result.style.width = '60%';
-            result.style.margin = '0 auto';
-            result.style.padding = '1.5em';
-            result.style.borderRadius = '12px';
-            result.innerHTML = "OOps !!! You Lost, as you didn't  solve it Correctly";
+            result_line.innerText = 'You Lost';
+            result_line.style.display = 'block';
+            result_line.style.color = 'red';
+       
         }
 
-
     }
 
 
-
-    action_button_1.onclick = function () {
-
-        buttons = [block_1_1, block_1_3, block_1_4, block_1_5, block_1_6, block_1_7, block_1_10, block_1_12, block_1_13];
-
-        buttons.forEach(element => {
-
-            element.onclick = function () {
-                element.textContent = '1';
-            }
-
-        });
-
-
+    play_again_button.onclick = function () {
+        window.location.reload();
     }
 
-
-    buttons = [block_1_1, block_1_3, block_1_4, block_1_5, block_1_6, block_1_7, block_1_10, block_1_12, block_1_13];
-
-
-
-
-    action_button_2.onclick = function () {
-        buttons = [block_1_1, block_1_3, block_1_4, block_1_5, block_1_6, block_1_7, block_1_10, block_1_12, block_1_13];
-
-        buttons.forEach(element => {
-
-            element.onclick = function () {
-                element.textContent = '2';
-            }
-
-        });
-
-
-
-    }
-
-
-
-    action_button_3.onclick = function () {
-
-        buttons = [block_1_1, block_1_3, block_1_4, block_1_5, block_1_6, block_1_7, block_1_10, block_1_12, block_1_13];
-
-        buttons.forEach(element => {
-            element.onclick = function () {
-                element.textContent = '3';
-            }
-
-        });
-
-
-
-    }
-
-    action_button_4.onclick = function () {
-
-        buttons = [block_1_1, block_1_3, block_1_4, block_1_5, block_1_6, block_1_7, block_1_10, block_1_12, block_1_13];
-
-        buttons.forEach(element => {
-            element.onclick = function () {
-                element.textContent = '4';
-            }
-
-        });
-
-
-
-
-    }
 
 
 }
 
 
-
-open_model.onclick = function () {
-
-    model.show();
-
-}
-
-close_model.onclick = function () {
-    model.close();
-}
 
