@@ -5,160 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4 x 4 Sudoku</title>
+    <title>4x4 Sudoku</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="bg1.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="sudoku_logo.jpeg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+ 
 </head>
 
 <body>
 
-    <header>
+<h1 style="text-align: center;font-size: 2rem;">4x4 Sudoku</h1>
 
-        <nav>
-
-
-            <ul>
-
-                <li
-                    style="color: green;font-size: larger;text-align: center;margin: 0 auto;text-shadow: 0.05em 0.05em purple;">
-                    <div style="font-size: larger;" id="top_line">Welcome to RSM Creations </div>
-                </li>
-                <li> Online 4 x 4 mini-Suduko</li>
-
-            </ul> 
-
-
-        </nav>
-
-    </header>
-
-    <br><br>
-
-    <div id="maha_container">
-
-        <div id="container_for_suduko" style="display:flex ;width: 100%;">
-            <div style="border:2px solid purple ;width: 100%;">
-
-                <div style="display: flex;width:100% ;border: 2px solid darkturquoise;width:100%;">
-                    <div style="width:100%; "><button style="width:100%;" id="block_1_1"></button></div>
-                    <div style=" width:100%;"><button style="width:100%;background-color: rgba(168, 161, 161, 0.562);"
-                            id="block_1_2">1</button></div>
-                </div>
-                <div style="display: flex;width:100%;border: 2px solid darkturquoise; width:100%;">
-                    <div style="width:100%;"><button style="width:100%;" id="block_1_3"></button></div>
-                    <div style="width:100%;"><button style="width:100%;" id="block_1_4"></button></div>
-                </div>
-
-            </div>
-
-            <div style="border:2px solid red ;width: 100%;">
-                <div style="display: flex;width: 100%;border: 2px solid darkturquoise;">
-                    <div style="width:100%;"><button style="width:100%;" id="block_1_5"></button></div>
-                    <div style="width:100%;"><button style="width:100%;" id="block_1_6"></button></div>
-                </div>
-                <div style="display: flex;width: 100%;border: 2px solid darkturquoise;;">
-                    <div style="width:100%;"><button style="width:100%;" id="block_1_7"></button></div>
-                    <div style="width:100%;"><button style="width:100%;background-color: rgba(168, 161, 161, 0.562);"
-                            id="block_1_8">4</button></div>
-                </div>
-            </div>
-
-
-        </div>
-
-        <div id="container_for_suduko" style="display:flex ;width: 100%;">
-            <div style="border:2px solid red ;width: 100%;">
-                <div style="display: flex;width: 100%;border: 2px solid darkturquoise;">
-                    <div style="width:100%;"><button style="width:100%;background-color: rgba(168, 161, 161, 0.562);"
-                            id="block_1_9">1</button></div>
-                    <div style="width:100%;"><button style="width:100%;" id="block_1_10"></button></div>
-                </div>
-                <div style="display: flex;width: 100%;border: 2px solid darkturquoise;">
-                    <div style="width:100%;"><button style="width:100%;background-color: rgba(168, 161, 161, 0.562);"
-                            id="block_1_11">3</button></div>
-                    <div style="width:100%;"><button style="width:100%;" id="block_1_12"></button></div>
-                </div>
-
-            </div>
-
-            <div style="border:2px solid purple ;width: 100%;">
-                <div style="display: flex;width: 100%;border: 2px solid darkturquoise;">
-                    <div style="width:100%;"><button style="width:100%;" id="block_1_13"></button></div>
-                    <div style="width:100%;"><button style="width:100%;background-color: rgba(168, 161, 161, 0.562);"
-                            id="block_1_14">2</button></div>
-                </div>
-                <div style="display: flex;width: 100%;border: 2px solid darkturquoise;">
-                    <div style="width:100%;"><button style="width:100%;background-color: rgba(168, 161, 161, 0.562);"
-                            id="block_1_15">4</button></div>
-                    <div style="width:100%;"><button style="width:100%;background-color: rgba(168, 161, 161, 0.562);"
-                            id="block_1_16">1</button></div>
-                </div>
-            </div>
-
-
-        </div>
-
-    </div>
-    <br><br>
-
-    <div id="action_buttons">
-        <button id="action_button_1">1</button>
-        <button id="action_button_2">2</button>
-        <button id="action_button_3">3</button>
-        <button id="action_button_4">4</button>
+    <div class="container">
+        <div><button class="to_be_filled to_be_4"></button><button class="freezed_button">1</button
+                class='to_be_filled to_be_2'><button class="to_be_filled to_be_2"></button><button
+                class="to_be_filled to_be_3"></button></div>
+        <div><button class="to_be_filled to_be_2"></button><button class="to_be_filled to_be_3"></button><button
+                class="to_be_filled to_be_1"></button><button class="freezed_button">4</button></div>
+        <div><button class="freezed_button">1</button><button class="to_be_filled to_be_4"></button class="to_be_filled to_be_3"><button
+                class="to_be_filled to_be_3"></button><button class="freezed_button">2</button></div>
+        <div><button class="freezed_button">3</button><button class="to_be_filled to_be_2"></button><button
+                class="freezed_button">4</button><button class="freezed_button">1</button></div>
     </div>
 
-
     <br><br>
+    <div class="four_button_container">
 
-    <div id="start_button">
-        <button id="start_game" style="outline: 1px solid black;">Start Game</button>
-        <button id="submit_game" style="outline: 1px solid black;">Submit Game</button>
+        <button id="button_1">1</button>
+        <button id="button_2">2</button>
+        <button id="button_3">3</button>
+        <button id="button_4">4</button>
     </div>
 
+    <!-- <br> -->
 
+<h2 id="result_line" style="text-align: center;font-size: 1.5rem;">You Won</h2>
 
-    <br>
-    <br>
-
-
-
-    <div style="text-align:center ;">
-        <h1 id="result" style="text-align: center;color: white;"></h1>
-    </div>
-
-
-    <br><br>
-    <div id="container_for_dialog" style="margin-top: 0em;margin: 0 auto;display: flex;justify-content: center;">
-        <button id="open_model" style="margin-top:0 ;width: 35%;
-        padding: 1em;font-size: large;border-radius: 10px;">Rules of the Game</button>
-
-        <br>
-
-        <dialog id="model">
-
-            <h2 style="text-align: center;">Rules of the game</h2>
-            <p>The Game is similar to the famous 9 x 9 suduko. The only difference that arises in this game is that
-                there will only fours numebrs
-                to be entered instead of nine numebrs and those four numbers are 1,2,3,4.
-            </p>
-            <br>
-
-            <p>Each 4 block must contain all those four numbers including the vertcal and horizontal side with no
-                entries being repeated.
-                Moreover the game should be finished within the given time limit.
-            </p>
-            <br><br>
-
-            <button id="close_model">Close model</button>
-
-
-        </dialog>
-
+<!-- <br> -->
+    <div class="start_submit_end">
+        <button id="start_button">Start Game</button>
+        <button id="submit_button" style="background-color: darkgreen;">Submit</button>
+        <button id="play_again_button" style="background-color: darkred;">Restart</button>
     </div>
 
 <br><br>
-    
 
     <script src="index.js"></script>
 </body>
